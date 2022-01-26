@@ -5,7 +5,7 @@ region     = "us-east-2"
 
 variable "elbname" {
    type = string
-  }
+   }
 variable "azname" {
   type = list
   default = ["us-east-2a","us-east-2b","us-east-2c"]
@@ -42,6 +42,16 @@ resource "aws_elb" "bar" {
   tags = {
     Name = "testelb"
   }
+}
+
+
+variable "mapvar" {
+ type = map
+ default = {
+  us-east-2a = "t2.large"
+  us-east-2b = "t2.medium"
+  us-east-2c = "t2.nano"
+ }
 }
 variable "instancetype" {
 type = list
